@@ -1,0 +1,15 @@
+langchain
+langchain-groq
+langgraph
+langsmith
+fastapi
+uvicorn
+python-dotenv
+langchain-chroma
+langchain-huggingface
+sentence-transformers
+pydantic>=2.0
+requests
+faiss-cpu
+langchain-community
+langchain-openai
