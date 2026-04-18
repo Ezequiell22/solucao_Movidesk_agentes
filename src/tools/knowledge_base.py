@@ -17,17 +17,24 @@ class KnowledgeBase:
         """Search for similar past tickets."""
         return self.db.similarity_search(query, k=k)
 
-    def add_ticket(self, ticket: Dict[str, Any]):
-        """Add a new ticket to the knowledge base."""
+    def add_ticket(self, ticket: Dict[str, Any], comments_summary: str = "", technical_analysis: str = ""):
+        """Add a rich ticket entry to the knowledge base."""
         subject = ticket.get('subject', '')
-        comments = ticket.get('comments', [])
-        description = comments[0].get('body', '') if comments else ""
+        comments_list = ticket.get('comments', [])
+        full_description = "\n".join([c.get('body', '') for c in comments_list if c.get('body')])
         
-        content = f"Subject: {subject}\nDescription: {description}"
+        # Store comprehensive content for retrieval
+        content = f"Subject: {subject}\nResumo: {comments_summary}\nAnálise Técnica: {technical_analysis}\nContexto: {full_description}"
+        
+        # Metadata stores the raw objects as JSON strings for later reconstruction
+        import json
         metadata = {
-            "ticket_id": ticket.get("id"),
+            "ticket_id": str(ticket.get("id")),
             "tags": ",".join(ticket.get("tags", [])) if isinstance(ticket.get("tags"), list) else str(ticket.get("tags", "")),
-            "type": "ticket"
+            "type": "ticket",
+            "raw_ticket": json.dumps(ticket),
+            "comments_summary": comments_summary,
+            "technical_analysis": technical_analysis
         }
         doc = Document(page_content=content, metadata=metadata)
         self.db.add_documents([doc])

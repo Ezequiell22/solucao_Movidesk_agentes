@@ -42,13 +42,29 @@ def ticket_intelligence_node(state: AgentState) -> Dict[str, Any]:
     print(f"--- [AGENTE 1: ANALISANDO TICKET {ticket_data.get('id')}] ---")
     agent = get_ticket_agent()
     output = agent.run(ticket_data)
-    return {"ticket_agent_output": output}
+    
+    return {
+        "ticket_agent_output": output,
+        "comments_summary": output.get("comments_summary", "")
+    }
 
 def store_knowledge_node(state: AgentState) -> Dict[str, Any]:
-    """Armazena o ticket na Base de Conhecimento antes da análise de código."""
+    """Armazena o ticket na Base de Conhecimento com resumo e análise técnica."""
     print("--- [ARMAZENANDO TICKET NA KB] ---")
     kb = get_kb()
-    kb.add_ticket(state["current_ticket_data"] if "current_ticket_data" in state else state["ticket_data"])
+    
+    # Get technical analysis if it was just performed (Agent 2)
+    # or if we are just storing it after Agent 1 found no match
+    tech_analysis = ""
+    code_output = state.get("code_agent_output")
+    if code_output:
+        tech_analysis = code_output.get("full_analysis", "")
+    
+    kb.add_ticket(
+        ticket=state["ticket_data"],
+        comments_summary=state.get("comments_summary", ""),
+        technical_analysis=tech_analysis
+    )
     return {}
 
 def code_analysis_node(state: AgentState) -> Dict[str, Any]:
@@ -70,10 +86,16 @@ def send_to_movidesk_node(state: AgentState) -> Dict[str, Any]:
     
     if ticket_output and ticket_output.get("status") == "resolved":
         similar_ids = [str(tid) for tid in ticket_output.get('similar_tickets', [])]
-        message = f"✅ IA encontrou um problema similar no passado:\n{ticket_output['summary']}\nConfiança: {ticket_output['confidence']}\nTickets Relacionados: {', '.join(similar_ids)}"
-    elif code_output and code_output.get("status") == "analyzed":
-        affected_files = [str(f) for f in code_output.get('affected_files', [])]
-        message = f"💻 Análise de Código IA:\nCausa Raiz: {code_output['root_cause']}\nSugestão de Correção: {code_output['suggested_fix']}\nArquivos Afetados: {', '.join(affected_files)}\nConfiança: {code_output['confidence']}"
+        message = (
+            f"🤖 **Agente analista encontrou tickets anteriores semelhantes**\n\n"
+            f"**Tickets:** [{', '.join(similar_ids)}]\n\n"
+            f"**Resumo das análises do ticket atual e dos anteriores:**\n"
+            f"{ticket_output['summary']}\n\n"
+            f"**Confiança:** {ticket_output['confidence']}"
+        )
+    elif code_output and (code_output.get("status") == "analyzed" or code_output.get("full_analysis")):
+        # Esta parte é acionada quando é um problema novo (Agent 2 rodou)
+        message = f"💻 **Análise Técnica de Código IA**\n\n{code_output.get('full_analysis')}"
     else:
         message = "A IA não conseguiu encontrar uma resolução clara ou a causa raiz."
 

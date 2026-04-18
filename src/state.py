@@ -10,6 +10,9 @@ class AgentState(TypedDict):
     # Agent 2 (Code Analysis) Output
     code_agent_output: Optional[Dict[str, Any]]
     
+    # LLM Summary of comments
+    comments_summary: Optional[str]
+    
     # Errors
     error: Optional[str]
     

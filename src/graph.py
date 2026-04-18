@@ -44,8 +44,11 @@ def create_graph():
     # Store knowledge, then analyze code
     workflow.add_edge("store_knowledge", "code_analysis")
     
-    # After analysis, send result to Movidesk
-    workflow.add_edge("code_analysis", "send_to_movidesk")
+    # After code analysis, we need to SAVE the technical analysis into the KB entry 
+    # of the CURRENT ticket, so it's available for future matches.
+    workflow.add_node("update_kb_after_analysis", store_knowledge_node)
+    workflow.add_edge("code_analysis", "update_kb_after_analysis")
+    workflow.add_edge("update_kb_after_analysis", "send_to_movidesk")
     
     # End of flow for this ticket
     workflow.add_edge("send_to_movidesk", END)
