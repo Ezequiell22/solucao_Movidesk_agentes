@@ -1,9 +1,9 @@
 import os
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 
 def get_llm():
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        raise ValueError("GROQ_API_KEY is not set. A valid API key is required for production.")
+        raise ValueError("OPENAI_API_KEY is not set. A valid API key is required for production.")
     
-    return ChatGroq(model_name="llama-3.3-70b-versatile", temperature=0)
+    return ChatOpenAI(model_name="gpt-5", temperature=0, api_key=api_key)

@@ -58,7 +58,13 @@ def store_knowledge_node(state: AgentState) -> Dict[str, Any]:
     tech_analysis = ""
     code_output = state.get("code_agent_output")
     if code_output:
-        tech_analysis = code_output.get("full_analysis", "")
+        # Tenta pegar root_cause e suggested_fix se full_analysis não existir (nova versão iterativa)
+        if "full_analysis" in code_output:
+            tech_analysis = code_output["full_analysis"]
+        else:
+            root_cause = code_output.get("root_cause", "")
+            suggested_fix = code_output.get("suggested_fix", "")
+            tech_analysis = f"Causa Raiz: {root_cause}\n\nSugestão: {suggested_fix}"
     
     kb.add_ticket(
         ticket=state["ticket_data"],
@@ -93,9 +99,25 @@ def send_to_movidesk_node(state: AgentState) -> Dict[str, Any]:
             f"{ticket_output['summary']}\n\n"
             f"**Confiança:** {ticket_output['confidence']}"
         )
-    elif code_output and (code_output.get("status") == "analyzed" or code_output.get("full_analysis")):
+    elif code_output:
         # Esta parte é acionada quando é um problema novo (Agent 2 rodou)
-        message = f"💻 **Análise Técnica de Código IA**\n\n{code_output.get('full_analysis')}"
+        if "full_analysis" in code_output:
+            message = f"💻 **Análise Técnica de Código IA**\n\n{code_output.get('full_analysis')}"
+        else:
+            # Versão iterativa com campos estruturados
+            root_cause = code_output.get("root_cause", "Não identificada.")
+            suggested_fix = code_output.get("suggested_fix", "Nenhuma sugestão disponível.")
+            affected = ", ".join(code_output.get("affected_files", []))
+            reasoning = code_output.get("reasoning_path", "")
+            
+            message = (
+                f"💻 **Análise Técnica de Código IA (Iterativa)**\n\n"
+                f"**Causa Raiz:**\n{root_cause}\n\n"
+                f"**Arquivos Afetados:**\n{affected}\n\n"
+                f"**Sugestão de Correção:**\n{suggested_fix}\n\n"
+                f"**Caminho de Raciocínio:**\n{reasoning}\n\n"
+                f"**Confiança:** {code_output.get('confidence', 0)}"
+            )
     else:
         message = "A IA não conseguiu encontrar uma resolução clara ou a causa raiz."
 

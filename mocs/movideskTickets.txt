@@ -58,55 +58,10 @@
     "satisfactionSurveyResponses": "Invalid faker method - random.word",
     "customFieldValues": "Invalid faker method - random.word",
     "assets": "Invalid faker method - random.word",
-    "id": "1",
+    "id": "3",
     "comments": [
       {
-        "body": "[Comentario 1] Problema de vazamento de mem\u00f3ria (Memory Leak) detectado ap\u00f3s a \u00faltima atualiza\u00e7\u00e3o. Ao fechar a tela de vendas, o FastMM4 reporta que inst\u00e2ncias de TSQLQuery n\u00e3o est\u00e3o sendo liberadas. Verifiquei que no bloco finally do m\u00e9todo LoadData o Free n\u00e3o est\u00e1 sendo chamado em caso de exce\u00e7\u00e3o silenciosa. Isso est\u00e1 travando o servidor de aplica\u00e7\u00e3o.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 2] Identificado bug na valida\u00e7\u00e3o de CPF no componente de cadastro de clientes. O algoritmo atual n\u00e3o est\u00e1 tratando corretamente CPFs com todos os d\u00edgitos iguais (ex: 111.111.111-11), permitindo a grava\u00e7\u00e3o de dados inv\u00e1lidos. \u00c9 necess\u00e1rio atualizar a unit uValidationUtils.pas e incluir os casos de teste que est\u00e3o faltando no projeto de DUnit.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 3] O cliente relatou lentid\u00e3o extrema no processamento de fechamento de m\u00eas. Analisando o log, percebemos que a query SQL est\u00e1 fazendo um Full Table Scan na tabela de lan\u00e7amentos. Precisamos otimizar o \u00edndice ou revisar o JOIN que est\u00e1 sendo feito na procedure PRC_FECHAMENTO_MENSAL. O problema \u00e9 intermitente e piora com volumes grandes.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 4] Interface gr\u00e1fica est\u00e1 apresentando artefatos visuais (flickering) em monitores com alta densidade de pixels (High DPI). O Delphi 10.4 deveria tratar isso nativamente, mas parece que as propriedades de alinhamento dos pain\u00e9is est\u00e3o for\u00e7ando um redimensionamento constante. Verificar se o manifesto do Windows est\u00e1 habilitando corretamente o suporte a DPI.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 5] O sistema est\u00e1 ignorando as configura\u00e7\u00f5es de fuso hor\u00e1rio no m\u00f3dulo de agendamento. As datas est\u00e3o sendo gravadas no banco em hor\u00e1rio local, mas o servidor espera UTC. Isso causa confus\u00e3o nos lembretes enviados via WhatsApp. \u00c9 necess\u00e1rio converter todas as entradas de TDateTimePicker usando a biblioteca TZDB antes de persistir.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 6] O sistema est\u00e1 ignorando as configura\u00e7\u00f5es de fuso hor\u00e1rio no m\u00f3dulo de agendamento. As datas est\u00e3o sendo gravadas no banco em hor\u00e1rio local, mas o servidor espera UTC. Isso causa confus\u00e3o nos lembretes enviados via WhatsApp. \u00c9 necess\u00e1rio converter todas as entradas de TDateTimePicker usando a biblioteca TZDB antes de persistir.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 7] Identificado bug na valida\u00e7\u00e3o de CPF no componente de cadastro de clientes. O algoritmo atual n\u00e3o est\u00e1 tratando corretamente CPFs com todos os d\u00edgitos iguais (ex: 111.111.111-11), permitindo a grava\u00e7\u00e3o de dados inv\u00e1lidos. \u00c9 necess\u00e1rio atualizar a unit uValidationUtils.pas e incluir os casos de teste que est\u00e3o faltando no projeto de DUnit.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 8] Interface gr\u00e1fica est\u00e1 apresentando artefatos visuais (flickering) em monitores com alta densidade de pixels (High DPI). O Delphi 10.4 deveria tratar isso nativamente, mas parece que as propriedades de alinhamento dos pain\u00e9is est\u00e3o for\u00e7ando um redimensionamento constante. Verificar se o manifesto do Windows est\u00e1 habilitando corretamente o suporte a DPI.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 9] Identificado bug na valida\u00e7\u00e3o de CPF no componente de cadastro de clientes. O algoritmo atual n\u00e3o est\u00e1 tratando corretamente CPFs com todos os d\u00edgitos iguais (ex: 111.111.111-11), permitindo a grava\u00e7\u00e3o de dados inv\u00e1lidos. \u00c9 necess\u00e1rio atualizar a unit uValidationUtils.pas e incluir os casos de teste que est\u00e3o faltando no projeto de DUnit.",
-        "type": 1,
-        "createdDate": "2026-04-18T10:00:00Z"
-      },
-      {
-        "body": "[Comentario 10] Problema de vazamento de mem\u00f3ria (Memory Leak) detectado ap\u00f3s a \u00faltima atualiza\u00e7\u00e3o. Ao fechar a tela de vendas, o FastMM4 reporta que inst\u00e2ncias de TSQLQuery n\u00e3o est\u00e3o sendo liberadas. Verifiquei que no bloco finally do m\u00e9todo LoadData o Free n\u00e3o est\u00e1 sendo chamado em caso de exce\u00e7\u00e3o silenciosa. Isso est\u00e1 travando o servidor de aplica\u00e7\u00e3o.",
+        "body": "[Comentario 1] Não traz nenhuma empresa na listagem", 
         "type": 1,
         "createdDate": "2026-04-18T10:00:00Z"
       }
