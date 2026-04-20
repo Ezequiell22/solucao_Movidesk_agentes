@@ -6,11 +6,20 @@ from src.tools.knowledge_base import KnowledgeBase
 from src.agents.ticket_agent import TicketIntelligenceAgent
 from src.agents.code_agent import CodeAnalysisAgent
 
-# Lazy initialization of components to avoid error at import time if environment variables are missing
+# Lazy global components
 _ticket_agent = None
 _code_agent = None
 _movidesk = None
 _kb = None
+_analyzer = None # New shared analyzer
+
+def get_analyzer():
+    global _analyzer
+    if _analyzer is None:
+        codebase_path = os.getenv("CODEBASE_PATH", "/Users/ezequielmenegas/git/testeDelphi/src")
+        from src.tools.code_analyzer import CodeAnalyzer
+        _analyzer = CodeAnalyzer(codebase_path)
+    return _analyzer
 
 def get_movidesk():
     global _movidesk
@@ -33,7 +42,7 @@ def get_ticket_agent():
 def get_code_agent():
     global _code_agent
     if _code_agent is None:
-        _code_agent = CodeAnalysisAgent()
+        _code_agent = CodeAnalysisAgent(analyzer=get_analyzer())
     return _code_agent
 
 def ticket_intelligence_node(state: AgentState) -> Dict[str, Any]:

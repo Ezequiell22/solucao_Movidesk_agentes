@@ -37,9 +37,10 @@ async def process_tickets_loop():
     # Pré-indexa o código uma vez no início
     codebase_path = os.getenv("CODEBASE_PATH", "/Users/ezequielmenegas/git/testeDelphi/src")
     if os.path.exists(codebase_path):
-        print(f"Indexando código em {codebase_path}...")
-        agent = get_code_agent()
-        agent.analyzer.index_codebase()
+        from src.nodes.ticket_nodes import get_analyzer
+        print(f"Iniciando preparação do analisador e indexação...")
+        analyzer = get_analyzer()
+        analyzer.index_codebase()
     
     while True:
         try:

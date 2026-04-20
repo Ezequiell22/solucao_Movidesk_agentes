@@ -7,9 +7,12 @@ from src.tools.code_analyzer import CodeAnalyzer
 from src.utils.llm import get_llm
 
 class CodeAnalysisAgent:
-    def __init__(self):
-        codebase_path = os.getenv("CODEBASE_PATH", "./sample_delphi_code")
-        self.analyzer = CodeAnalyzer(codebase_path)
+    def __init__(self, analyzer: CodeAnalyzer = None):
+        if analyzer:
+            self.analyzer = analyzer
+        else:
+            codebase_path = os.getenv("CODEBASE_PATH", "./sample_delphi_code")
+            self.analyzer = CodeAnalyzer(codebase_path)
         self.llm = get_llm()
 
     def run(self, ticket_data: Dict[str, Any]) -> Dict[str, Any]:
