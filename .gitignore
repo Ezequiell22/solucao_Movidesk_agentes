@@ -1,5 +1,27 @@
+# Variáveis de ambiente
 .env
-data/*
-__pycache__/*
-/__pycache__/*
-*.pyc
+
+# Banco de dados e cache de dados
+data/
+db/
+
+# Python - Arquivos compilados e cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
+mark1.log
+
+# Documentos e Mocks (ajustado para manter apenas o necessário)
+# Se quiser ignorar todos os txt, mantenha a linha abaixo
+# *.txt
+
+# IDEs e Sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
