@@ -1,6 +1,5 @@
-langchain
-langchain-groq
-langgraph
+langchain>=0.3.0
+langgraph>=0.2.0
 langsmith
 fastapi
 uvicorn
@@ -9,7 +8,11 @@ langchain-chroma
 langchain-huggingface
 sentence-transformers
 pydantic>=2.0
+pydantic-settings
 requests
-faiss-cpu
 langchain-community
 langchain-openai
+rank_bm25
+watchdog
+einops
+huggingface_hub

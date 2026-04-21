@@ -25,7 +25,7 @@ def create_graph():
             return END
             
         output = state.get("ticket_agent_output")
-        if output and output.get("status") == "resolved":
+        if output and output.get("status") == "matched" and output.get("confidence", 0) > 0.8:
             return "send_to_movidesk"
         
         # If no match in local knowledge base, proceed to store and then code analysis
@@ -54,3 +54,6 @@ def create_graph():
     workflow.add_edge("send_to_movidesk", END)
 
     return workflow.compile()
+
+# Export a single instance
+graph = create_graph()

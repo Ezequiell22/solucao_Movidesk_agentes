@@ -1,0 +1,127 @@
+2026-04-21 19:08:11,837 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:08:11,851 - GitSync - INFO - Sincronizando codebase com origin/main...
+2026-04-21 19:08:11,867 - GitSync - ERROR - Erro ao executar comando git git -C /Users/ezequielmenegas/git/testeDelphi/src fetch origin: error: cannot open '.git/FETCH_HEAD': Operation not permitted
+
+2026-04-21 19:08:11,868 - GitSync - ERROR - Falha ao sincronizar via Git: Command '['git', '-C', '/Users/ezequielmenegas/git/testeDelphi/src', 'fetch', 'origin']' returned non-zero exit status 255.
+2026-04-21 19:08:11,868 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:08:11,868 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:08:11,868 - MARK1 - ERROR - Falha crítica na indexação inicial: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2026-04-21 19:08:11,868 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:08:31,263 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:08:31,264 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
+2026-04-21 19:08:44,291 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:08:44,291 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:08:44,292 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:08:44,292 - src.tools.code_analyzer - INFO - Tentando carregar modelo Jina: jinaai/jina-embeddings-v2-small-code
+2026-04-21 19:08:46,211 - src.tools.code_analyzer - INFO - --- [FALLBACK: USANDO OPENAI EMBEDDINGS] ---
+2026-04-21 19:08:46,348 - src.tools.code_analyzer - INFO - Sucesso: OpenAI Embeddings carregado como fallback.
+2026-04-21 19:08:46,436 - src.tools.code_analyzer - INFO - Indexando 169 métodos...
+2026-04-21 19:08:49,614 - CodebaseWatcher - INFO - Iniciando monitoramento da codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:08:49,616 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:08:49,616 - MARK1 - INFO - --- [BUSCANDO TICKETS: 2026-04-21 19:08:49] ---
+2026-04-21 19:08:49,616 - src.tools.movidesk - INFO - Usando MOCK para tickets (Arquivo: /Users/ezequielmenegas/git/agentes/mocs/movideskTickets.txt)
+2026-04-21 19:08:49,617 - src.tools.movidesk - INFO - Retornando 1 tickets do mock.
+2026-04-21 19:08:49,617 - MARK1 - INFO - Processando 1 tickets...
+2026-04-21 19:08:49,617 - MARK1 - INFO - Analisando Ticket ID: 3
+2026-04-21 19:08:49,643 - src.nodes.ticket_nodes - INFO - --- [AGENTE 1: ANALISANDO TICKET 3] ---
+2026-04-21 19:08:54,225 - src.utils.llm - INFO - Initializing LLM: gpt-4o (temp: 0.0)
+2026-04-21 19:08:57,366 - src.nodes.ticket_nodes - INFO - --- [ENVIANDO PARA O MOVIDESK] ---
+2026-04-21 19:08:57,367 - src.tools.movidesk - INFO - MOCK: Updating ticket 3 with {'comments': [{'body': "🤖 **Agente analista encontrou tickets anteriores semelhantes**\n\n**Tickets:** \n\n**Resumo das análises do ticket atual e dos anteriores:**\nA análise anterior identificou que a função sqlAdd está correta, pois apenas adiciona linhas ao comando SQL sem limpar o conteúdo anterior. A função addParam não foi encontrada no código, o que impede a avaliação de possíveis problemas relacionados a parâmetros, como 'tenant_id'. Sugere-se revisar a implementação de addParam para garantir que não limpe parâmetros ou reatribua FQuery.SQL.Text. Além disso, recomenda-se adicionar logs para confirmar a ordem de chamadas e verificar reatribuições de FQuery.SQL.Text.\n\n**Confiança:** 0.9", 'type': 1}]}
+2026-04-21 19:08:57,373 - MARK1 - INFO - Ticket ID: 3 processado com sucesso.
+2026-04-21 19:09:44,164 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:09:44,165 - CodebaseWatcher - INFO - Parando monitoramento da codebase...
+2026-04-21 19:09:44,165 - MARK1 - INFO - Worker thread finalizada.
+2026-04-21 19:09:44,166 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
+2026-04-21 19:09:51,325 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:09:51,325 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:09:51,326 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:09:51,326 - src.tools.code_analyzer - INFO - Tentando carregar modelo Jina: jinaai/jina-embeddings-v2-small-code
+2026-04-21 19:09:53,100 - src.tools.code_analyzer - INFO - --- [FALLBACK: USANDO OPENAI EMBEDDINGS] ---
+2026-04-21 19:09:53,235 - src.tools.code_analyzer - INFO - Sucesso: OpenAI Embeddings carregado como fallback.
+2026-04-21 19:09:53,286 - src.tools.code_analyzer - INFO - Indexando 169 métodos...
+2026-04-21 19:09:55,437 - CodebaseWatcher - INFO - Iniciando monitoramento da codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:09:55,438 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:09:55,438 - MARK1 - INFO - --- [BUSCANDO TICKETS: 2026-04-21 19:09:55] ---
+2026-04-21 19:09:55,439 - src.tools.movidesk - INFO - Usando MOCK para tickets (Arquivo: /Users/ezequielmenegas/git/agentes/mocs/movideskTickets.txt)
+2026-04-21 19:09:55,439 - src.tools.movidesk - INFO - Retornando 1 tickets do mock.
+2026-04-21 19:09:55,439 - MARK1 - INFO - Processando 1 tickets...
+2026-04-21 19:09:55,439 - MARK1 - INFO - Analisando Ticket ID: 3
+2026-04-21 19:09:55,460 - src.nodes.ticket_nodes - INFO - --- [AGENTE 1: ANALISANDO TICKET 3] ---
+2026-04-21 19:09:59,278 - src.utils.llm - INFO - Initializing LLM: gpt-4o (temp: 0.0)
+2026-04-21 19:10:01,927 - src.nodes.ticket_nodes - INFO - --- [ARMAZENANDO TICKET NA KB] ---
+2026-04-21 19:10:02,000 - src.tools.knowledge_base - INFO - Ticket 3 stored in Knowledge Base.
+2026-04-21 19:10:02,001 - src.nodes.ticket_nodes - INFO - --- [AGENTE 2: ANÁLISE DE CÓDIGO] ---
+2026-04-21 19:10:02,001 - src.utils.llm - INFO - Initializing LLM: gpt-4o (temp: 0.0)
+2026-04-21 19:10:02,001 - src.agents.code_agent - INFO - Usando queries do Agente 1: função de listagem de empresas classe Empresa consulta SQL para listagem de empresas
+2026-04-21 19:10:02,001 - src.agents.code_agent - INFO - Iteração 1 | Query: função de listagem de empresas classe Empresa consulta SQL para listagem de empresas
+2026-04-21 19:10:11,434 - src.agents.code_agent - INFO - Iteração 2 | Query: Para continuar investigando o bug, sugiro que você examine o método `SearchData` na classe `TModelBusinessListEmpresas`. Verifique especificamente a implementação da consulta SQL dentro desse método, pois ele parece ser responsável pela listagem de empresas. Certifique-se de que a consulta SQL está correta e que está retornando os dados esperados. Além disso, verifique se há alguma manipulação de dados ou filtros aplicados que possam estar causando o problema.
+2026-04-21 19:10:17,373 - src.agents.code_agent - INFO - Iteração 3 | Query: Para continuar investigando o bug, sugiro que você examine o método `sqlAdd` na classe `TModelResourceQueryFiredac`. Verifique especificamente como a string SQL está sendo construída e adicionada à consulta. Certifique-se de que a string SQL está correta e que não há erros de sintaxe ou lógica que possam estar afetando a execução da consulta. Além disso, verifique se o método `sqlClear` está sendo chamado corretamente antes de adicionar novas partes à consulta, para evitar que consultas anteriores interfiram nos resultados atuais.
+2026-04-21 19:10:26,177 - src.nodes.ticket_nodes - INFO - --- [ARMAZENANDO TICKET NA KB] ---
+2026-04-21 19:10:26,178 - src.tools.knowledge_base - INFO - Updating existing ticket 3 in Knowledge Base.
+2026-04-21 19:10:26,269 - src.tools.knowledge_base - INFO - Ticket 3 stored in Knowledge Base.
+2026-04-21 19:10:26,270 - src.nodes.ticket_nodes - INFO - --- [ENVIANDO PARA O MOVIDESK] ---
+2026-04-21 19:10:26,270 - src.tools.movidesk - INFO - MOCK: Updating ticket 3 with {'comments': [{'body': '🤖 **Análise do Especialista IA**\n\nIdentificamos que o problema está na construção incompleta da consulta SQL ao buscar dados das empresas. Isso pode estar causando falhas na execução da consulta. Vamos corrigir isso garantindo que a consulta SQL seja construída corretamente antes de ser executada, o que resolverá o problema de busca de dados.', 'type': 1}]}
+2026-04-21 19:10:26,274 - MARK1 - INFO - --- [VALIDAÇÃO TAGS TICKET 3] ---
+2026-04-21 19:10:26,274 - MARK1 - INFO - Analise_tecnica: A causa raiz do problema parece estar na construção incompleta da consulta SQL no método `TModelBusi...
+2026-04-21 19:10:26,275 - MARK1 - INFO - Analise_geral: Identificamos que o problema está na construção incompleta da consulta SQL ao buscar dados das empre...
+2026-04-21 19:10:26,275 - MARK1 - INFO - Ticket ID: 3 processado com sucesso.
+2026-04-21 19:10:39,182 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:10:39,182 - CodebaseWatcher - INFO - Parando monitoramento da codebase...
+2026-04-21 19:10:39,183 - MARK1 - INFO - Worker thread finalizada.
+2026-04-21 19:10:39,184 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
+2026-04-21 19:12:11,415 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:12:11,415 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:12:11,415 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:12:11,415 - MARK1 - ERROR - Falha crítica na indexação inicial: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2026-04-21 19:12:11,415 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:12:19,394 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:12:19,394 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
+2026-04-21 19:13:00,027 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:13:00,028 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:13:00,028 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:13:00,028 - MARK1 - ERROR - Falha crítica na indexação inicial: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2026-04-21 19:13:00,028 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:13:00,028 - MARK1 - INFO - --- [BUSCANDO TICKETS: 2026-04-21 19:13:00] ---
+2026-04-21 19:13:00,028 - src.tools.movidesk - INFO - Usando MOCK para tickets (Arquivo: /Users/ezequielmenegas/git/agentes/mocs/movideskTickets.txt)
+2026-04-21 19:13:00,028 - src.tools.movidesk - INFO - Retornando 1 tickets do mock.
+2026-04-21 19:13:00,028 - MARK1 - INFO - Processando 1 tickets...
+2026-04-21 19:13:00,028 - MARK1 - INFO - Analisando Ticket ID: 3
+2026-04-21 19:13:00,069 - src.nodes.ticket_nodes - INFO - --- [AGENTE 1: ANALISANDO TICKET 3] ---
+2026-04-21 19:13:05,761 - MARK1 - ERROR - Erro ao processar ticket 3: 'Settings' object has no attribute 'OPENAI_API_KEY'
+2026-04-21 19:13:11,802 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:13:11,802 - MARK1 - INFO - Worker thread finalizada.
+2026-04-21 19:13:11,804 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
+2026-04-21 19:13:53,802 - MARK1 - INFO - --- [STARTUP MARK1] ---
+2026-04-21 19:13:53,802 - MARK1 - INFO - Indexando codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:13:53,802 - src.tools.code_analyzer - INFO - Configurando modelos de embedding...
+2026-04-21 19:13:53,802 - src.tools.code_analyzer - INFO - Tentando carregar modelo Jina: jinaai/jina-embeddings-v2-small-code
+2026-04-21 19:13:55,488 - src.tools.code_analyzer - INFO - --- [FALLBACK: USANDO OPENAI EMBEDDINGS] ---
+2026-04-21 19:13:55,624 - src.tools.code_analyzer - INFO - Sucesso: OpenAI Embeddings carregado como fallback.
+2026-04-21 19:13:55,677 - src.tools.code_analyzer - INFO - Indexando 169 métodos...
+2026-04-21 19:14:00,027 - CodebaseWatcher - INFO - Iniciando monitoramento da codebase em: /Users/ezequielmenegas/git/testeDelphi/src
+2026-04-21 19:14:00,028 - MARK1 - INFO - --- [LOOP ETERNO INICIADO] ---
+2026-04-21 19:14:00,029 - MARK1 - INFO - --- [BUSCANDO TICKETS: 2026-04-21 19:14:00] ---
+2026-04-21 19:14:00,029 - src.tools.movidesk - INFO - Usando MOCK para tickets (Arquivo: /Users/ezequielmenegas/git/agentes/mocs/movideskTickets.txt)
+2026-04-21 19:14:00,029 - src.tools.movidesk - INFO - Retornando 1 tickets do mock.
+2026-04-21 19:14:00,029 - MARK1 - INFO - Processando 1 tickets...
+2026-04-21 19:14:00,029 - MARK1 - INFO - Analisando Ticket ID: 3
+2026-04-21 19:14:00,052 - src.nodes.ticket_nodes - INFO - --- [AGENTE 1: ANALISANDO TICKET 3] ---
+2026-04-21 19:14:04,171 - src.utils.llm - INFO - Initializing LLM: gpt-4o (temp: 0.0)
+2026-04-21 19:14:05,407 - src.nodes.ticket_nodes - INFO - --- [ARMAZENANDO TICKET NA KB] ---
+2026-04-21 19:14:05,467 - src.tools.knowledge_base - INFO - Ticket 3 stored in Knowledge Base.
+2026-04-21 19:14:05,467 - src.nodes.ticket_nodes - INFO - --- [AGENTE 2: ANÁLISE DE CÓDIGO] ---
+2026-04-21 19:14:05,468 - src.utils.llm - INFO - Initializing LLM: gpt-4o (temp: 0.0)
+2026-04-21 19:14:05,468 - src.agents.code_agent - INFO - Usando queries do Agente 1: função de listagem de empresas consulta SQL para listagem de empresas classe TListagemEmpresas
+2026-04-21 19:14:05,468 - src.agents.code_agent - INFO - Iteração 1 | Query: função de listagem de empresas consulta SQL para listagem de empresas classe TListagemEmpresas
+2026-04-21 19:14:10,436 - src.agents.code_agent - INFO - Iteração 2 | Query: Para continuar investigando o bug, sugiro que você examine o método `TModelBusinessListEmpresas.SearchData()` mais detalhadamente. Verifique a implementação completa desse método, especialmente a parte onde a consulta SQL é construída e executada. Isso pode ajudar a identificar se há algum problema na construção da query ou na forma como os dados estão sendo buscados.
+2026-04-21 19:14:16,991 - src.agents.code_agent - INFO - Iteração 3 | Query: Para continuar investigando o bug, sugiro que você examine o método `TModelResourceQueryFiredac.sqlAdd()` mais detalhadamente. Verifique como esse método está sendo utilizado dentro do `TModelBusinessListEmpresas.SearchData()` e se a string SQL está sendo construída corretamente. Além disso, certifique-se de que todos os parâmetros necessários estão sendo adicionados corretamente com o método `TModelResourceQueryFiredac.addParam()`. Isso pode ajudar a identificar se há algum problema na construção da query SQL que está causando o bug.
+2026-04-21 19:14:23,541 - src.nodes.ticket_nodes - INFO - --- [ARMAZENANDO TICKET NA KB] ---
+2026-04-21 19:14:23,543 - src.tools.knowledge_base - INFO - Updating existing ticket 3 in Knowledge Base.
+2026-04-21 19:14:23,623 - src.tools.knowledge_base - INFO - Ticket 3 stored in Knowledge Base.
+2026-04-21 19:14:23,624 - src.nodes.ticket_nodes - INFO - --- [ENVIANDO PARA O MOVIDESK] ---
+2026-04-21 19:14:23,624 - src.tools.movidesk - INFO - MOCK: Updating ticket 3 with {'comments': [{'body': '🤖 **Análise do Especialista IA**\n\nIdentificamos um problema na construção da consulta SQL que está causando o bug. A consulta está sendo montada de forma incorreta, o que impede a execução correta da busca de empresas. Vamos corrigir a sintaxe da consulta para garantir que os dados sejam filtrados corretamente, resolvendo assim o problema identificado.', 'type': 1}]}
+2026-04-21 19:14:23,630 - MARK1 - INFO - Ticket ID: 3 processado com sucesso.
+2026-04-21 19:14:46,218 - MARK1 - INFO - --- [SHUTTING DOWN MARK1] ---
+2026-04-21 19:14:46,218 - CodebaseWatcher - INFO - Parando monitoramento da codebase...
+2026-04-21 19:14:46,218 - MARK1 - INFO - Worker thread finalizada.
+2026-04-21 19:14:46,219 - MARK1 - INFO - --- [ETERNAL LOOP STOPPED] ---
